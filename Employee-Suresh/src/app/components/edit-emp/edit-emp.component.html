@@ -1,0 +1,69 @@
+<div  class="col-sm-5">
+    <h2> Edit Empployee </h2>
+    <hr>
+    
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()"  >
+      
+      <div class="form-group">
+        <label for="firstName"> First Name:</label>
+        <input formControlName="firstName" placeholder="First Name" name="firstName" id="firstName" class="form-control">
+        <div *ngIf="submitted && editForm.controls.firstName.errors" class="error">
+          <div *ngIf="editForm.controls.firstName.errors.required" class="text-danger">
+            firstName Required !!
+  
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+          <label for="lastName"> Last Name:</label>
+          <input formControlName="lastName" placeholder="Last Name" name="lastName" id="lastName" class="form-control">
+          <div *ngIf="submitted && editForm.controls.lastName.errors" class="error">
+            <div *ngIf="editForm.controls.lastName.errors.required" class="text-danger">
+              Last Name Required !!
+    
+            </div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+            <label for="email"> Email:</label>
+            <input formControlName="email" placeholder="email" name="email" id="email" class="form-control">
+            <div *ngIf="submitted && editForm.controls.email.errors" class="error">
+              <div *ngIf="editForm.controls.email.errors.required" class="text-danger">
+                Email Required !!
+      
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+              <label for="age"> Age:</label>
+              <input formControlName="age" placeholder="age" name="age" id="age" class="form-control">
+              <div *ngIf="submitted && editForm.controls.age.errors" class="error">
+                <div *ngIf="editForm.controls.age.errors.required" class="text-danger">
+                  Age Required !!
+        
+                </div>
+              </div>
+            </div>  
+          
+            <div class="form-group">
+                <label for="salary"> Salary:</label>
+                <input formControlName="salary" placeholder="salary" name="salary" id="salary" class="form-control">
+                <div *ngIf="submitted && editForm.controls.salary.errors" class="error">
+                  <div *ngIf="editForm.controls.salary.errors.required" class="text-danger">
+                    Salary Required !!
+          
+                  </div>
+                </div>
+              </div>  
+  
+       <button style="background-color:black;color:white;" class="btn btn-sucess" > Update </button> 
+       &nbsp; &nbsp;
+       <a class="btn btn-warning" href="/list-emp"> Cancel </a>
+  
+    </form>
+  
+  
+  </div>

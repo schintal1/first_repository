@@ -1,0 +1,36 @@
+<h3>
+  Listing Employee's
+</h3>
+<hr>
+<button class="btn btn-primary" (click)="addEmp()">Add Employee</button>
+&nbsp;&nbsp;
+<hr>
+<table align=center border=1>
+    <thead>
+        <tr [ngStyle]="{'color':'black','background-color':'darkgray'}">
+            <th>Sr.No</th>
+            <th>EmpId</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>email</th>
+            <th>Age</th>
+            <th>Salary</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody [ngStyle]="{'color':'red','background-color':'lightblue'}">
+<tr *ngFor="let emp of emp;index as i">
+  <td>{{i+1}}</td>
+  <td>{{emp.empId}}</td>
+  <td>{{emp.firstName}}</td>
+  <td>{{emp.lastName}}</td>
+  <td>{{emp.email}}</td>
+  <td>{{emp.age}}</td>
+  <td>{{emp.salary}}</td>
+  <td>
+    <button class="btn btn-danger" (click)="deleteEmp(emp);">Delete</button>
+    <button class="btn btn-warning" style="margin-left:5px" (click) ="editEmp(emp)"> Edit </button>
+  </td>
+</tr>
+
+</table>
